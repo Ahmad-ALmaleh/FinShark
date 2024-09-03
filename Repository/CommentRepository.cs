@@ -13,10 +13,6 @@ namespace FINSHARK.Repository
             _context = context;
         }
 
-        public Task<Comment> addComment(Comment comment)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<List<Comment>> GetAllAsync()
         {

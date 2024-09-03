@@ -134,3 +134,8 @@ C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\obj\Debug\net8.0\refint\FINSHAR
 C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\obj\Debug\net8.0\FINSHARK.pdb
 C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\obj\Debug\net8.0\FINSHARK.genruntimeconfig.cache
 C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\obj\Debug\net8.0\ref\FINSHARK.dll
+C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Khaldoun Alhalabi\source\repos\FINSHARK\obj\Debug\net8.0\FINSHARK.sourcelink.json

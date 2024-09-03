@@ -6,6 +6,5 @@ namespace FINSHARK.Interfaces
     {
         Task<List<Comment>> GetAllAsync();
         Task<Comment?> GetByIdAsync(int id);
-        Task<Comment> addComment(Comment comment);
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FINSHARK.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240905122928_addingIdentity")]
-    partial class addingIdentity
+    [Migration("20240905140128_add-portfolio-with-manyTomany")]
+    partial class addportfoliowithmanyTomany
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,21 @@ namespace FINSHARK.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("FINSHARK.Models.Portfolio", b =>
+                {
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("StockId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AppUserId", "StockId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("Portfolios");
+                });
+
             modelBuilder.Entity("FINSHARK.Models.Stock", b =>
                 {
                     b.Property<int>("Id")
@@ -178,6 +193,20 @@ namespace FINSHARK.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "41e8a853-670d-4242-b3ba-d288483cc825",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "f5018351-a26b-4347-a695-a0364456df4c",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -295,6 +324,25 @@ namespace FINSHARK.Migrations
                     b.Navigation("Stock");
                 });
 
+            modelBuilder.Entity("FINSHARK.Models.Portfolio", b =>
+                {
+                    b.HasOne("FINSHARK.Models.AppUser", "AppUser")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FINSHARK.Models.Stock", "Stock")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Stock");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -346,9 +394,16 @@ namespace FINSHARK.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FINSHARK.Models.AppUser", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
             modelBuilder.Entity("FINSHARK.Models.Stock", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }

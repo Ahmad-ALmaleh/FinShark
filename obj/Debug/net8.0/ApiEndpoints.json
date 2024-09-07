@@ -116,6 +116,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FINSHARK.Controllers.PortfolioController",
+    "Method": "GetUserPortfolio",
+    "RelativePath": "api/Portfolio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FINSHARK.Controllers.PortfolioController",
+    "Method": "AddPortfolio",
+    "RelativePath": "api/Portfolio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "symbol",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FINSHARK.Controllers.PortfolioController",
+    "Method": "DeletePortfolio",
+    "RelativePath": "api/Portfolio",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "symbol",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FINSHARK.Controllers.StockController",
     "Method": "GetAll",
     "RelativePath": "api/Stock",
